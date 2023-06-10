@@ -1,3 +1,5 @@
+(* Modular Sequential Counter ADT *)
+
 From iris.program_logic Require Export weakestpre.
 
 From iris.heap_lang Require Import notation lang.

@@ -1,5 +1,3 @@
-From iris.program_logic Require Export weakestpre.
-
 From iris.heap_lang Require Import notation lang.
 
 
@@ -15,12 +13,14 @@ From iris.prelude Require Import options.
 Section proof.
 
     Context `{!heapGS Σ}.  
-    Context (N : namespace).
+
     
     Notation iProp := (iProp Σ).
 
 
-    Lemma frame_valid (A P Q : iProp) e : A ⊢ (({{{P}}} e {{{v, RET #v; Q}}}) →  (∀ R: iProp, {{{P ∗ R}}} e {{{v, RET #v; Q ∗ R}}})).
+    Lemma frame_valid (A P Q : iProp) e : 
+        A ⊢ (({{{P}}} e {{{v, RET #v; Q}}}) →
+        (∀ R: iProp, {{{P ∗ R}}} e {{{v, RET #v; Q ∗ R}}})).
     Proof.
         iIntros "H1 #H2".
         iIntros (R).

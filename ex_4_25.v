@@ -62,3 +62,5 @@ Section proof.
             NONE => "p" <- (Fst (!"p"), "l2")
           | SOME "x" => "f" (Snd !"x") "x"
           end).
+
+          
